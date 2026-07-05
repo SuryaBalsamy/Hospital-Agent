@@ -1,0 +1,107 @@
+/* ============================================================
+   AUTH PAGES — Login & Register (Premium SaaS theme)
+   ============================================================ */
+.auth-page {
+  display: flex; min-height: 100vh; background: var(--bg-base);
+}
+
+/* Left branding panel */
+.auth-panel-left {
+  width: 480px; flex-shrink: 0; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%);
+  border-right: 1px solid var(--border);
+}
+.auth-panel-bg { position: absolute; inset: 0; pointer-events: none; }
+.auth-orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(60px); opacity: 0.4;
+}
+.auth-orb-1 { width: 300px; height: 300px; background: rgba(37, 99, 235, 0.2); top: -60px; left: -60px; }
+.auth-orb-2 { width: 250px; height: 250px; background: rgba(6, 182, 212, 0.2); bottom: -40px; right: -40px; }
+
+.auth-panel-content { position: relative; z-index: 2; padding: 3rem; text-align: center; }
+.auth-logo {
+  width: 80px; height: 80px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.25rem; margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow-glow);
+  animation: float 6s ease-in-out infinite;
+}
+.auth-panel-title { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem; }
+.auth-panel-sub   { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2.5rem; }
+
+.auth-trust-badges { display: flex; flex-direction: column; gap: 0.85rem; align-items: center; }
+.trust-badge {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: #ffffff; border: 1px solid var(--border);
+  border-radius: var(--radius-full); padding: 0.55rem 1.35rem;
+  font-size: 0.85rem; color: var(--text-primary); font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  width: 100%; max-width: 320px;
+  transition: var(--transition);
+}
+.trust-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+/* Right form panel */
+.auth-panel-right {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 2.5rem;
+}
+.auth-form-card {
+  width: 100%; max-width: 480px;
+  background: #ffffff; border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 2.75rem;
+  box-shadow: var(--shadow-xl);
+  animation: scaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.auth-form-header { margin-bottom: 2rem; text-align: center; }
+.auth-form-title { font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.4rem; }
+.auth-form-sub { color: var(--text-secondary); font-size: 0.92rem; }
+
+.auth-form-footer {
+  margin-top: 1.75rem; text-align: center;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  font-size: 0.9rem; color: var(--text-secondary);
+}
+.auth-back-link { color: var(--text-muted); font-size: 0.85rem; display: inline-block; margin-top: 0.5rem; }
+.auth-back-link:hover { color: var(--primary); }
+
+/* Credentials hint box */
+.auth-hint-box {
+  margin-top: 1.5rem; padding: 1rem;
+  background: #F8FAFC; border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* Role grid selector */
+.role-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+}
+.role-card {
+  background: #F8FAFC; border: 1.5px solid var(--border);
+  border-radius: var(--radius-md); padding: 1rem 0.75rem;
+  cursor: pointer; text-align: center; transition: var(--transition-spring);
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+}
+.role-card:hover { border-color: var(--primary); background: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.role-card-active { 
+  border-color: var(--primary) !important; 
+  background: var(--primary-glow) !important; 
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); 
+  transform: translateY(-2px);
+}
+.role-icon  { font-size: 1.6rem; }
+.role-label { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); }
+.role-desc  { font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; }
+
+@media (max-width: 900px) {
+  .auth-panel-left { display: none; }
+  .auth-panel-right { padding: 1.5rem; }
+  .auth-form-card { padding: 2rem 1.5rem; }
+}

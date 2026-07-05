@@ -1,3 +1,16 @@
+---
+title: Hospital Agent
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+
+
+
+
 # AI Hospital Assistant
 
 A complete modern, responsive, and professional hospital management web application built with a React/Vite frontend and a FastAPI backend. It features role-based authentication and dedicated dashboards for Patients, Doctors, Receptionists, and Admins.

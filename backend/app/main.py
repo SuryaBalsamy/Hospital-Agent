@@ -35,8 +35,16 @@ app.include_router(hospital.router,      prefix="/api/hospital",      tags=["Hos
 app.include_router(ai.router)
 
 # ---------------------------------------------------------------------------
-# Health check
+# Health check & Root
 # ---------------------------------------------------------------------------
+@app.get("/", tags=["Root"])
+def root_index():
+    return {
+        "message": "HorizonCare AI Medical Center API is running successfully.",
+        "health_check": "/api/health",
+        "documentation": "/docs"
+    }
+
 @app.get("/api/health", tags=["Health"])
 def health_check():
     return {"status": "ok", "service": "Hospital AI Assistant API", "version": "1.0.0"}

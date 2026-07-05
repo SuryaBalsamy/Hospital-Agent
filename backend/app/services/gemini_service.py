@@ -153,8 +153,11 @@ class GeminiService:
             err_str = str(e)
             tb_str = traceback.format_exc()
             logger.error(f"Gemini Service Error: {err_str}\nTraceback:\n{tb_str}")
-            # Temporarily return the real error message for debugging
-            return f"DEBUG_ERROR: {err_str}"
+            if "429" in err_str or "quota" in err_str.lower():
+                return ("Our AI service is currently experiencing high demand. Please try again in a few moments, "
+                        "or use our quick action buttons below to perform bookings and checks directly!")
+            return ("I'm sorry, I am having trouble connecting to the hospital information system right now. "
+                    "Please try again shortly or contact support if the issue persists.")
 
 
 # Singleton instance

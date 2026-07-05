@@ -1,49 +1,40 @@
-# =========================
-# Environment files
-# =========================
+# Environment Files
 .env
-*.env
-backend/.env
-frontend/.env
+.env.*
+.env.local
+!.env.example
 
-# =========================
-# Python
-# =========================
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.pyc
-
-# Virtual Environments
-venv/
-.venv/
-env/
-
-# =========================
-# Node
-# =========================
+# Dependency Directories
 node_modules/
-frontend/node_modules/
+jspm_packages/
+web_stage/
 
-# Build
+# Build Outputs
 dist/
 build/
-frontend/dist/
+out/
+.next/
+.nuxt/
 
-# =========================
-# IDE
-# =========================
+# Python Cache & Compilation
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Editor / IDE settings
 .vscode/
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
 
-# =========================
-# Logs
-# =========================
-*.log
-
-# =========================
-# OS
-# =========================
+# OS Files
 .DS_Store
 Thumbs.db

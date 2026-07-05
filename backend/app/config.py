@@ -17,10 +17,15 @@ import urllib.parse
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-if not DATABASE_URL:
+if DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.replace(
+        "mysql://",
+        "mysql+pymysql://",
+        1
+    )
+else:
     DATABASE_URL = (
         f"mysql+pymysql://{DB_USER}:"
         f"{urllib.parse.quote_plus(DB_PASSWORD)}"
         f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     )
-
